@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+.dark{
+  @apply bg-black text-white duration-500;
+}
+.light{
+  @apply bg-white text-black duration-500;
+}
+
+/* Apply custom scrollbar to elements with the class 'custom-scrollbar' */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for the scrollbar track */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Default scrollbar thumb color */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color when hovered */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #333; /* Even darker when active */
+}
+
+/* For dark mode */
+@media (prefers-color-scheme: dark) {
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #333; /* Dark track background */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color in dark mode */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker thumb color when hovered */
+  }
+}
+
+/* animations.css */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0% {
+    opacity: 0.7;
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0deg);
+    scale: 1.15;
+  }
+  100% {
+    opacity: 0.7;
+    scale: 1;
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+
+@keyframes cloud-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cloud-float-alt {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-cloud-float {
+  animation: cloud-float 5s ease-in-out infinite;
+}
+
+.animate-cloud-float-alt {
+  animation: cloud-float-alt 6s ease-in-out infinite;
+}
