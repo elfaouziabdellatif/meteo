@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sun, Wind, Droplet, ThermometerSnowflake, Cloud, CloudRain, CloudSnow, Heart } from "lucide-react";
+import { Sun, Wind, Droplet, ThermometerSnowflake, Cloud, CloudRain, CloudSnow } from "lucide-react";
 import Spinner from "../helpers/Spinner";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 

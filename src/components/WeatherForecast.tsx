@@ -1,16 +1,7 @@
 import { motion } from "framer-motion";
 import { Key, useState } from "react";
-import { Sun, CloudRain, CloudSnow, ThermometerSnowflake, Cloud, } from "lucide-react";
 
 // Fake hourly data for demonstration purposes
-const getHourlyData = () => [
-  { hour: "06:00 AM", temp: "22°C", condition: "Sunny" },
-  { hour: "09:00 AM", temp: "24°C", condition: "Sunny" },
-  { hour: "12:00 PM", temp: "28°C", condition: "Sunny" },
-  { hour: "03:00 PM", temp: "30°C", condition: "Cloudy" },
-  { hour: "06:00 PM", temp: "26°C", condition: "Cloudy" },
-  { hour: "09:00 PM", temp: "24°C", condition: "Clear" },
-];
 
 interface ForecastData {
   Unit: string;
@@ -68,20 +59,7 @@ export default function WeatherForecast({ forecastData }: WeatherForecastProps) 
       height: card.height,
     });
   };
-  const getLucideIcon = (condition: string) => {
-    switch (condition) {
-      case "clear sky":
-        return <Cloud className="w-24 h-24 text-gray-500-400" />;
-      case "rain":
-        return <CloudRain className="w-24 h-24 text-blue-500" />;
-      case "clouds":
-        return <Cloud className="w-24 h-24 text-gray-400" />;
-      case "snow":
-        return <CloudSnow className="w-24 h-24 text-white" />;
-      default:
-        return <Sun className="w-24 h-24 text-yellow-400" />;
-    }
-  };
+  
   // Map weather conditions to icons
   const getWeatherIcon = (icon: string ) => {
     if (icon) {
