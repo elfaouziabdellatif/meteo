@@ -7,16 +7,6 @@ import Footer from "../components/Foooter";
 import { fetchWeatherData } from "../api/WeatherDataApi";
 
 
-interface weatherData {
-    city: string;
-    country: string;
-    temperature: string;
-    condition: string;
-    windSpeed: string;
-    humidity: string;
-    feelsLike: string;
-    icon: string;
-    }
 
 const HomePage = () => {
   const [searchCity, setSearchCity] = useState("rabat");
@@ -91,7 +81,7 @@ const HomePage = () => {
           icon: data.list[0].weather[0].icon,
         });
         // Set the forecast data for the next 7 days
-        const forecast = data.list.slice(0, 16).map((dayData: any, index: number) => ({
+        const forecast = data.list.slice(0, 16).map((dayData: any) => ({
             day: new Date(dayData.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' }),
             city : data.city.name,
             date : new Date(dayData.dt * 1000).toISOString().split('T')[0],
